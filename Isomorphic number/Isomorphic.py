@@ -26,3 +26,18 @@ class Solution:
                 res[t[i]] = s[i]
 
         return True
+
+    def test():
+    # True
+        s = "paper"
+        t = "title"
+        print(isIsomorphic(s, t))
+
+    # False
+        s = "foo"
+        t = "bar"
+        print(isIsomorphic(s, t))
+
+    if __name__ == "__main__":
+        x = Solution(s, t)
+        test()
