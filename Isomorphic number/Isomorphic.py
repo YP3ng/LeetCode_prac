@@ -1,3 +1,4 @@
+# TODO: Make test() work out
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
         
