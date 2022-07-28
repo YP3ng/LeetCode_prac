@@ -1,19 +1,17 @@
 class Solution:
     def plusOne(self, digits):
         
+        # Add 1 to the last int
         digits[-1] = digits[-1] + 1
-        checker = 0
         
+        # Backward looping
         for i in reversed(range(len(digits))):          
-            if 10 - digits[i] == 0:
+            if 10 - digits[i] == 0: # Num bigger than or equal to 10
                 digits[i] = 0
-                if i - 1 < 0:
+                if i - 1 < 0: # Check if it is the first int in the list
                     digits.insert(0,1)
                 else:
                     digits[i-1] += 1
-                    checker = 1
-            else:
-                checker = 0
             
         
         return digits

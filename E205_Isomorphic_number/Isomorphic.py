@@ -5,16 +5,18 @@ class Solution:
         
         for i in range(len(s)):
 
+            # Check if char is in dict
             if s[i] in res:
-                if t[i] == res.get(s[i]):
+                if t[i] == res.get(s[i]): # Check if associated position in t map to same char
                     continue
                 else:
                     return False
             else:
-                res[s[i]] = t[i]
+                res[s[i]] = t[i] # add new char to the dict
         
         res = {}
         
+        # Repeat again to prevent badc and baba (no two characters can map to the same char)
         for i in range(len(t)):
 
             if t[i] in res:
@@ -25,7 +27,7 @@ class Solution:
             else:
                 res[t[i]] = s[i]
 
-        return True  
+        return True
 
 if __name__ == "__main__":
 
@@ -37,6 +39,6 @@ if __name__ == "__main__":
     print(s1.isIsomorphic(s, t))
 
     # False
-    s = "foo"
-    t = "bar"
+    s = "badc"
+    t = "baba"
     print(s1.isIsomorphic(s, t))
