@@ -1,3 +1,6 @@
+# Jupyter checkpoints
+.ipynb_checkpoints
+
 # Compiled class file
 *.class
 
