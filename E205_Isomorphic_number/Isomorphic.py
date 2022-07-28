@@ -1,4 +1,3 @@
-# TODO: Make test() work out
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
         
@@ -26,19 +25,18 @@ class Solution:
             else:
                 res[t[i]] = s[i]
 
-        return True
+        return True  
 
-    def test():
+if __name__ == "__main__":
+
+    s1 = Solution()
+
     # True
-        s = "paper"
-        t = "title"
-        print(isIsomorphic(s, t))
+    s = "paper"
+    t = "title"
+    print(s1.isIsomorphic(s, t))
 
     # False
-        s = "foo"
-        t = "bar"
-        print(isIsomorphic(s, t))
-
-    if __name__ == "__main__":
-        x = Solution(s, t)
-        test()
+    s = "foo"
+    t = "bar"
+    print(s1.isIsomorphic(s, t))
