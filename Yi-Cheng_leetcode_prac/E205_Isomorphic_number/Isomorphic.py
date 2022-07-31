@@ -11,6 +11,7 @@ class Solution:
                     continue
                 else:
                     return False
+                
             else:
                 res[s[i]] = t[i] # add new char to the dict
         
