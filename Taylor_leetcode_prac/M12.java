@@ -28,13 +28,17 @@ public class M12 {
         int remain = num;
         String res = "";
 
-        while (remain != 0) {
-            for (String key : values.keySet()) {
-                if (values.get(key) <= remain) {
-                    res += key;
-                    remain -= values.get(key);
-                    break;
-                }
+        // O(1) solution. As there is a finite set of roman numerals,
+        // there is a hard upper limit on how many times the loop can iterate.
+        // This upper limit is 15 times, and it occurs for the number 3888, which
+        // has a representation of MMMDCCCLXXXVIII. Therefore, we say the time
+        // complexity is constant
+        // while (remain != 0) {
+        for (String key : values.keySet()) {
+            if (values.get(key) <= remain) {
+                res += key;
+                remain -= values.get(key);
+                break;
             }
         }
 
