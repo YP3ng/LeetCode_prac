@@ -1,11 +1,33 @@
 class Solution:
     def canMakeArithmeticProgression(self, arr) -> bool:
+        a = min(arr)
+        b = max(arr)
+        n = len(arr)
+        d = (b - a)/ (n-1)
+        
+        if d == 0:
+            return True
+
+        for i in range(n):
+            arr[i] = arr[i] - a
+            
+            if arr[i] % d == 0:
+                continue
+            else:
+                return False
+
+        s = set(arr) # To rule out duplicated values
+
+        return len(s) == n 
+
+
         '''
         This method can run, but it is slow and will change descending ordered list to ascending first
         '''
+        '''
         # sort
         self.Mergesort(arr)
-
+        print(arr)
         # ai = a1 + (i-1)d
         d = arr[1] - arr[0]
         for i in range(1, len(arr)):
@@ -37,7 +59,7 @@ class Solution:
             else:
                 A[k] = C[j]
                 j = j + 1
-                k = k + 1
+            k = k + 1
         if i == p:
             A[k: p + q] = C[j: q]
         else:
@@ -53,7 +75,8 @@ class Solution:
             print("Bracket C: ", C)
             Solution.Mergesort(self, B)
             Solution.Mergesort(self, C)
-            Solution.Merge(self, B, C, A) # FIXME: sA is a para
+            Solution.Merge(self, B, C, A)
+        '''
 
 if __name__ == "__main__":
     s1 = Solution()
@@ -67,5 +90,5 @@ if __name__ == "__main__":
     #print(s1.canMakeArithmeticProgression(arr))
 
     # False
-    arr = [1,2,4]
+    arr = [1,10,10,10,19]
     print(s1.canMakeArithmeticProgression(arr))
