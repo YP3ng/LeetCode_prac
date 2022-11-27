@@ -15,7 +15,8 @@ class Solution:
     def mergeTwoLists(self, list1, list2) :
 
         # Linked list version
-        
+
+
         # List version
         len_a = len(list1)
         len_b = len(list2)
