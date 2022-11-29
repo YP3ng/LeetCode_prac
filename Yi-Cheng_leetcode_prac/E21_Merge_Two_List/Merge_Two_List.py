@@ -11,6 +11,7 @@ class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
+
 class Solution:
     def mergeTwoLists(self, list1, list2) :
 
@@ -65,11 +66,32 @@ class Solution:
         #     j += 1
         # return res
 
+def test():
+    s = Solution()
+
+    # List 1
+    l1 = ListNode(1)
+    l1.next = ListNode(2)
+    l1.next.next = ListNode(4)
+
+    # List 2
+    l2 = ListNode(1)
+    l2.next = ListNode(3)
+    l2.next.next = ListNode(4)
+
+    return s.mergeTwoLists(l1, l2)
+
 if __name__ == "__main__":
 
-    s1 = Solution()
+   res = test()
 
-    list1 = [1,2,4]
-    list2 = [1,3,4]
-    # [1,1,2,3,4,4]
-    print(s1.mergeTwoLists(list1, list2))
+   # Print out
+   outcome = []
+   while res:
+    nxt = res.next
+    outcome.append(res.val)
+    res = nxt
+
+    if res == None:
+        outcome.append(None)
+print(outcome)
