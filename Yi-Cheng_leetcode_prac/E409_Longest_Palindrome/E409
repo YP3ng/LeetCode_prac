@@ -1,0 +1,25 @@
+class Solution:
+    def longestPalindrome(self, s: str) -> int:
+        
+        count = {}
+        res = 0
+        sup = 0
+
+        # Counting the occurance of each character
+        for ele in s:
+            if ele not in count:
+                count[ele] = 1
+            else:
+                count[ele] += 1
+        # if occurance is even, we use all
+        # if occurance is odd, we use count -1 of them
+        # add one at the end since we can use a full odd occurance character in palindrome
+        for k, v in count.items():
+
+            if v % 2 == 0:
+                res += v
+            else:
+                sup = 1
+                res += v - 1
+
+        return res + sup
