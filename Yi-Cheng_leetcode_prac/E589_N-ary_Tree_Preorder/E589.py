@@ -8,4 +8,17 @@ class Node:
 
 class Solution:
     def preorder(self, root):
-        pass
+
+        res = []
+
+        def dfs(node):
+            if not node: 
+                return
+
+            res.append(node.val)
+
+            for v in node.children:
+                dfs(v)
+
+        dfs(root)
+        return res
